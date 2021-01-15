@@ -1,5 +1,6 @@
 import ShoppingList from '../ShoppingList/ShoppingList'
 import {useState} from 'react'
+import './ShoppingItem.css';
 
 function ShoppingItem({
 //list of deconstructed props
@@ -16,7 +17,7 @@ removeItem
 
     return(
         
-        <div>
+        <div className="shopping-item" >
             {isPurchased ? 
             <>
             <p>{item.item}</p> 
@@ -27,8 +28,8 @@ removeItem
             <>
             <p>{item.item}</p> 
             <p>{item.quantity} {item.unit}</p>
-            <button onClick={ () => buyItem(item.id)}>Buy</button>
-            <button onClick={ () => removeItem(item.id)}>Remove</button>
+            <button className="buyBtn" onClick={ () => buyItem(item.id)}>Buy</button>
+            <button className="removeBtn" onClick={ () => removeItem(item.id)}>Remove</button>
             </>
             }
         </div>
